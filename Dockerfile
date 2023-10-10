@@ -5,5 +5,6 @@ WORKDIR /app
 COPY . .
 
 RUN pip3 install -r req.txt
+RUN chmod +x script.sh
 
-CMD dbt run 
+CMD python3 invoke.py 

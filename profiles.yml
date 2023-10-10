@@ -1,0 +1,28 @@
+bigquery_dbt:
+  outputs:
+    dev:
+      dataset: demo
+      job_execution_timeout_seconds: 1000
+      job_retries: 1
+      keyfile: /secrets/cloudrun-dbt
+      location: us-east1
+      method: service-account
+      priority: interactive
+      project: dbt-devops
+      threads: 8
+      type: bigquery
+  target: dev
+sqsh_devops:
+  outputs:
+    dev:
+      dataset: sample_dataset
+      job_execution_timeout_seconds: 600
+      job_retries: 1
+      keyfile: /secrets/cloudrun-dbt
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: sqsh-developer-pocs
+      threads: 8
+      type: bigquery
+  target: dev
